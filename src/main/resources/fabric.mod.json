@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "pixelgymfabric",
+  "version": "${version}",
+  "name": "PixelGymFabric",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/pixelgymfabric/icon.png",
+  "environment": "server",
+  "entrypoints": {
+    "main": [
+      "com.rengv.pixelgymfabric.PixelGymFabric"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
