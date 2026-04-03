@@ -3,6 +3,7 @@ package com.rengv.pixelgymfabric.model;
 import java.util.List;
 
 public class Badge {
+    public int MinLevel;
     public String GymName;
     public String BadgeName;
     public String BadgeDisplayName;

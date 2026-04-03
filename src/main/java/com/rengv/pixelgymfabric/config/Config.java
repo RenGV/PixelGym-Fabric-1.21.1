@@ -59,10 +59,10 @@ public class Config {
         }
     }
 
-    public static void reload() {
-        load();
-        PixelGymFabric.LOGGER.info("Badges config reloaded");
-    }
+//    public static void reload() {
+//        load();
+//        PixelGymFabric.LOGGER.info("Badges config reloaded");
+//    }
 
     private static void apply(ConfigData d) {
         badges.clear();
@@ -95,6 +95,7 @@ public class Config {
         {
            "badges": {
              "1": {
+               "MinLevel": 30,
                "GymName": "&8&lGimnasio Roca",
                "BadgeName": "Roca",
                "BadgeDisplayName": "&8&lMedalla Roca",
@@ -105,6 +106,7 @@ public class Config {
                "CommandsAction": []
              },
              "2": {
+               "MinLevel": 40,
                "GymName": "&9&lGimnasio Agua",
                "BadgeName": "Cascada",
                "BadgeDisplayName": "&9&lMedalla Cascada",
@@ -115,6 +117,7 @@ public class Config {
                "CommandsAction": []
              },
              "3": {
+               "MinLevel": 50,
                "GymName": "&e&lGimnasio Eléctrico",
                "BadgeName": "Trueno",
                "BadgeDisplayName": "&e&lMedalla Trueno",
@@ -125,6 +128,7 @@ public class Config {
                "CommandsAction": []
              },
              "4": {
+               "MinLevel": 60,
                "GymName": "&2&lGimnasio Planta",
                "BadgeName": "Arcoíris",
                "BadgeDisplayName": "&2&lMedalla Arcoíris",
@@ -135,6 +139,7 @@ public class Config {
                "CommandsAction": []
              },
              "5": {
+               "MinLevel": 70,
                "GymName": "&5&lGimnasio Veneno",
                "BadgeName": "Alma",
                "BadgeDisplayName": "&5&lMedalla Alma",
@@ -145,6 +150,7 @@ public class Config {
                "CommandsAction": []
              },
              "6": {
+               "MinLevel": 80,
                "GymName": "&d&lGimnasio Psíquico",
                "BadgeName": "Pantano",
                "BadgeDisplayName": "&d&lMedalla Pantano",
@@ -155,6 +161,7 @@ public class Config {
                "CommandsAction": []
              },
              "7": {
+               "MinLevel": 90,
                "GymName": "&4&lGimnasio Fuego",
                "BadgeName": "Volcán",
                "BadgeDisplayName": "&4&lMedalla Volcán",
@@ -165,6 +172,7 @@ public class Config {
                "CommandsAction": []
              },
              "8": {
+               "MinLevel": 100,
                "GymName": "&6&lGimnasio Tierra",
                "BadgeName": "Tierra",
                "BadgeDisplayName": "&6&lMedalla Tierra",

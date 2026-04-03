@@ -1,29 +1,20 @@
 package com.rengv.pixelgymfabric.gui;
 
-import com.rengv.pixelgymfabric.PixelGymFabric;
 import com.rengv.pixelgymfabric.Utils;
 import com.rengv.pixelgymfabric.config.Config;
-import com.rengv.pixelgymfabric.integration.CobbleSyncIntegration;
 import com.rengv.pixelgymfabric.model.Badge;
 import com.rengv.pixelgymfabric.storage.DbGetters;
 import com.rengv.pixelgymfabric.storage.DbManager;
-import com.rengv.pixelgymfabric.utils.ThreadUtil;
 import net.minecraft.component.DataComponentTypes;
-import net.minecraft.component.type.ItemEnchantmentsComponent;
 import net.minecraft.component.type.LoreComponent;
-import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.packet.s2c.play.TitleFadeS2CPacket;
 import net.minecraft.network.packet.s2c.play.TitleS2CPacket;
-import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.ScreenHandlerType;
-import net.minecraft.screen.slot.Slot;
 import net.minecraft.screen.slot.SlotActionType;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -119,10 +110,12 @@ public class BadgesGUI extends ScreenHandler {
                     lore.add(Utils.format("&a¡Medalla obtenida!"));
                 } else {
                     stack = Utils.getItemStack("minecraft:barrier", 1);
-                    stack.set(DataComponentTypes.CUSTOM_NAME, Utils.format("&cTodavía no has obtenido la medalla " + badge.BadgeName));
+                    stack.set(DataComponentTypes.CUSTOM_NAME, Utils.format(badge.GymName));
 
                     lore.add(Text.empty());
+                    lore.add(Utils.format("&cTodavía no has obtenido la medalla " + badge.BadgeName));
                     lore.add(Utils.format("&e¡Click para desafiar al gimnasio!"));
+                    lore.add(Utils.format("&b◆ Nivel: &a" + badge.MinLevel));
                 }
 
                 stack.set(DataComponentTypes.LORE, new LoreComponent(lore));
@@ -131,6 +124,7 @@ public class BadgesGUI extends ScreenHandler {
             } else this.slots.get(i).setStack(whitePanel);
         }
     }
+
     @Override
     protected boolean insertItem(ItemStack stack, int startIndex, int endIndex, boolean fromLast) {
         return false;
